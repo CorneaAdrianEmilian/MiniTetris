@@ -1,5 +1,5 @@
 # MiniTetris
-Algorithm that simulate the game tetris.\
+Algorithm that simulates the game tetris.\
 It has a map and an object\
 -The object is represented as a series of strings, in which dots "." are empty areas and stars "*" are physical parts of the object.\
 -The map is provided in a similar fashion, dots "." are empty areas and number signs "#" are filled areas of the grid.\
