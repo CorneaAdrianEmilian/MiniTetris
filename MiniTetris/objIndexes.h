@@ -6,8 +6,8 @@ class objIndexes
 	int second;
 public:
 	objIndexes(int a, int b);
-	inline int getFirst() { return first; };
-	inline int getSecond() { return second; };
+	const inline int getFirst() { return first; };
+	const inline int getSecond() { return second; };
 	inline void setFirst(int a) { first = a; };
 	inline void setSecond(int a) { second= a; };
 };

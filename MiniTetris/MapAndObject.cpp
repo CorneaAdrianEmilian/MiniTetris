@@ -11,20 +11,28 @@ MapAndObject::~MapAndObject()
 	rules.clear();
 }
 
-void MapAndObject::createObj(int& row, int& columns)
+const void MapAndObject::createObj(int& row, int& columns)
 {
 	for (int i = 0; i < row; i++) {
 		std::string obj_create;
 		std::cin >> obj_create;
+		while (obj_create.size() != columns) {
+			std::cout << "Incorect numbers of characters. Expected:" << columns << " characters\nTry again:\n";
+			std::cin >> obj_create;
+		}
 		object.emplace_back(obj_create);
 	}
 }
 
-void MapAndObject::createMap(int& row, int& columns)
+const void MapAndObject::createMap(int& row, int& columns)
 {
 	for (int i = 0; i < row; i++) {
 		std::string map_create;
 		std::cin >> map_create;
+		while (map_create.size() != columns) {
+			std::cout << "Incorect numbers of characters. Expected:" << columns << " characters\nTry again:\n";
+			std::cin >> map_create;
+		}
 		map.emplace_back(map_create);
 	}
 }
@@ -32,11 +40,7 @@ void MapAndObject::objRls( int& columns)
 {
 	std::vector<std::string>::iterator it;
 	//we find the "rules" based on the first element of the object
-	int firstR = 0;  // <-
-	int firstC = 0;  // <-
-	int nextR = 0;
-	int nextC = 0;
-	int i = 0;
+	int firstR, firstC,nextR,nextC = 0, i = 0;
 	bool first_index = true;
 	for (it = object.begin(); it != object.end(); it++) {
 		for (int j = 0; j < columns; j++)

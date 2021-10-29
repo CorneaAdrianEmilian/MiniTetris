@@ -16,12 +16,12 @@ class MapAndObject
 public:
 	MapAndObject();
 	~MapAndObject();
-	void createObj(int& row, int& columns);
-	void createMap(int& row, int& columns);
+	const void createObj (int& row, int& columns);
+	const void createMap(int& row, int& columns);
 	//method to find a set of rules that the object follows to be created
 	void objRls( int& columns);
 	void spaceFinder(int& map_column);
-	inline int getRez() { return rez;};
+	const inline int getRez() { return rez;};
 	void printSolution();
 };
 
